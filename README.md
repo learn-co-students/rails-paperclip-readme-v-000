@@ -217,7 +217,7 @@ into our `Author`.
 
 class Author < ActiveRecord::Base
   has_many :posts
-  has_attached_file :avatar, default_url: '/images/default.png', styles: { thumb: "100x100>" }
+  has_attached_file :avatar, default_url: 'default.png', styles: { thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
 ```
@@ -240,7 +240,17 @@ for the style to the `url` method:
 #...
 ```
 
-And we have thumbnails on our author index page!
+If we go to `/authors/new` and create an author, then return to
+`/authors`, well see that the thumbnail has been generated for the new
+author, but now one or more of our existing author's thumbnails is a broken image.
+
+That's because we added images to those authors before we defined the
+`:thumb` style, so we need to tell Paperclip to update our existing images with
+the new style. Fortunately, Paperclip provides a rake task for exactly
+that.
+
+On the console, run `rake paperclip:refresh:missing_styles`, then
+refresh that `/authors` page and we should have thumbnails for everyone.
 
 ## Summary
 
