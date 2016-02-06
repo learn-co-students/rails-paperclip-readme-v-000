@@ -63,16 +63,16 @@ Paperclip provides a generator for us, so we can run:
 
 `rails g paperclip author avatar`
 
-This will generate a migration that looks like:
+This will generate a migration that looks something like:
 
 ```ruby
 class AddAvatarColumnsToUsers < ActiveRecord::Migration
   def up
-    add_attachment :users, :avatar
+    add_attachment :authors, :avatar
   end
 
   def down
-    remove_attachment :users, :avatar
+    remove_attachment :authors, :avatar
   end
 end
 ```
