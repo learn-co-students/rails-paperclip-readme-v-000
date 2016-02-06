@@ -1,4 +1,4 @@
-# Adding Uploads With Paperclip
+# Uploading Images With Paperclip
 
 ## Objectives
 
