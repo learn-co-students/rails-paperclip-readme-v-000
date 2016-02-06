@@ -188,14 +188,18 @@ is when no file has been attached:
 
 class Author < ActiveRecord::Base
   has_many :posts
-  has_attached_file :avatar, default_url: 'default.png'
+  has_attached_file :avatar, default_url: ':style/default.png'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
 ```
 
+You can store default images to match each style, e.g. in this case we
+would have a thumbnail default as well as an original default. You just
+need the supporting folders in your `app\assets\images` directory to
+match the style names ("original" is the default, unprocessed style).
+
 **Note:** We have to place an image named `default.png` in our
-`app\assets\images` folder (already provided), that part doesn't automatically happen via
-Paperclip (Image)Magick.
+`app\assets\images\thumb` and `app\assets\images\original` folders (already provided), that part doesn't automatically happen via Paperclip (Image)Magick.
 
 Reload `/authors`. No more broken images!
 
@@ -221,7 +225,7 @@ into our `Author`.
 
 class Author < ActiveRecord::Base
   has_many :posts
-  has_attached_file :avatar, default_url: 'default.png', styles: { thumb: "100x100>" }
+  has_attached_file :avatar, default_url: ':style/default.png', styles: { thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
 ```
