@@ -193,6 +193,10 @@ class Author < ActiveRecord::Base
 end
 ```
 
+**Note:** We have to place an image named `default.png` in our
+`app\assets\images` folder (already provided), that part doesn't automatically happen via
+Paperclip (Image)Magick.
+
 Reload `/authors`. No more broken images!
 
 ### Generating Thumbnails With Paperclip
