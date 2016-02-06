@@ -39,7 +39,8 @@ Once we have ImageMagick, let's add Paperclip to our Gemfile:
 gem "paperclip"
 ```
 
-Run `bundle install` to finish it up.
+Run `bundle install` to finish it up. If your Rails server is already
+running, remember to restart it so that it has access to the new gem.
 
 ### Adding An Avatar To An Author
 
@@ -56,8 +57,14 @@ use to access the attached file. In this case, we'll go with `avatar`.
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
  ```
+
+The `validates_attachment_content_type` validator is provided by
+Paperclip, and ensures that we get an image file when we expect one.
+This validator is required by default.
+
 Now we need to add the `avatar` field to our table via a migration.
 Paperclip provides a generator for us, so we can run:
 
@@ -182,6 +189,7 @@ is when no file has been attached:
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar, default_url: '/images/default.png'
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
 ```
 
@@ -210,6 +218,7 @@ into our `Author`.
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar, default_url: '/images/default.png', styles: { thumb: "100x100>" }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end
 ```
 
