@@ -163,7 +163,7 @@ in the list.
 #...
   <% @authors.each do |author| %>
     <li>
-    <% image_tag author.avatar.url %>
+    <%= image_tag author.avatar.url %>
     <%= link_to author.name, author_path(author) %><br>
     <%= author.bio %>
     </li>
