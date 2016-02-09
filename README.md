@@ -125,7 +125,7 @@ the new `avatar` field to be used for mass assignment:
   private
 
   def author_params
-    params.require(:author).permit(:bio, :name)
+    params.require(:author).permit(:bio, :name, :avatar)
   end
 ```
 
