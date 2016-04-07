@@ -52,7 +52,7 @@ First, we need to wire up our model to use Paperclip's
 use to access the attached file. In this case, we'll go with `avatar`.
 
 ```ruby
-# models\author.rb
+# models/author.rb
 
 class Author < ActiveRecord::Base
   has_many :posts
@@ -96,7 +96,7 @@ Now we need to set up the form view to give us a way to upload an
 avatar. Let's add that to the author form partial:
 
 ```erb
-# views\authors\_form.html.erb
+# views/authors/_form.html.erb
 
 <%= form_for @author, html: {multipart: true} do |f| %>
   <%= f.label :avatar %>
@@ -140,7 +140,7 @@ Here's where Paperclip really starts to shine.
 Let's add the avatar to our author `show` view:
 
 ```erb
-# views\authors\show.html.erb
+# views/authors/show.html.erb
 
 <h1><%= @author.name %></h1>
 <%= image_tag @author.avatar.url %>
@@ -158,7 +158,7 @@ Let's also add the avatar to the author `index` view, so we can see them
 in the list.
 
 ```erb
-# views\authors\index.html.erb
+# views/authors/index.html.erb
 
 #...
   <% @authors.each do |author| %>
@@ -195,11 +195,11 @@ end
 
 You can store default images to match each style, e.g. in this case we
 would have a thumbnail default as well as an original default. You just
-need the supporting folders in your `app\assets\images` directory to
+need the supporting folders in your `app/assets/images` directory to
 match the style names ("original" is the default, unprocessed style).
 
 **Note:** We have to place an image named `default.png` in our
-`app\assets\images\thumb` and `app\assets\images\original` folders (already provided), that part doesn't automatically happen via Paperclip (Image)Magick.
+`app/assets/images/thumb` and `app/assets/images/original` folders (already provided), that part doesn't automatically happen via Paperclip (Image)Magick.
 
 Reload `/authors`. No more broken images!
 
@@ -235,7 +235,7 @@ thumbnail style for us. To use it in the view, simply pass the symbol
 for the style to the `url` method:
 
 ```erb
-# views\authors\index.html.erb
+# views/authors/index.html.erb
 
 #...
   <% @authors.each do |author| %>
@@ -265,3 +265,5 @@ refresh that `/authors` page and we should have thumbnails for everyone.
 We've seen how easy it is to upload and image attachments in our
 application using the Paperclip gem, have default avatars, and create
 thumbnails with very little code.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
