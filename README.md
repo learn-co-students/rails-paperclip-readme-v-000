@@ -249,7 +249,7 @@ for the style to the `url` method:
 ```
 
 If we go to `/authors/new` and create an author, then return to
-`/authors`, well see that the thumbnail has been generated for the new
+`/authors`, we'll see that the thumbnail has been generated for the new
 author, but now one or more of our existing author's thumbnails is a broken image.
 
 That's because we added images to those authors before we defined the
@@ -267,3 +267,5 @@ application using the Paperclip gem, have default avatars, and create
 thumbnails with very little code.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
