@@ -8,14 +8,11 @@
 
 ## Lesson
 
-We're going to be using the Paperclip gem to add author pictures to our blog application so that
-readers can match a face to a post. Make sure to run `rake db:seed` to
-set up some test data!
+We're going to be using the Paperclip gem to add author pictures to our blog application so that readers can match a face to a post. Make sure to run `rake db:seed` to set up some test data!
 
 ### Setting Up Paperclip
 
-In our blog application, we want to be able to show the author's
-headshot, so we're going to turn to the popular gem [Paperclip](https://github.com/thoughtbot/paperclip) to help us out. We could certainly write our own code to handle the image uploads, but as we'll see, Paperclip offers so much in terms of integrating with our ActiveRecord models, configuring storage options, and processing images after upload.
+In our blog application, we want to be able to show the author's headshot, so we're going to turn to the popular gem [Paperclip](https://github.com/thoughtbot/paperclip) to help us out. We could certainly write our own code to handle the image uploads, but as we'll see, Paperclip offers so much in terms of integrating with our ActiveRecord models, configuring storage options, and processing images after upload.
 
 To set up Paperclip, first we need to install the [ImageMagick](http://www.imagemagick.org/script/index.php) dependency. Paperclip uses ImageMagick to resize images after upload.
 
@@ -27,8 +24,7 @@ On Linux, use `apt-get`:
 
 `sudo apt-get install imagemagick -y`
 
-If you are using another system, you can get download and install
-instructions from the [ImageMagick website](http://www.imagemagick.org/script/binary-releases.php).
+If you are using another system, you can get download and install instructions from the [ImageMagick website](http://www.imagemagick.org/script/binary-releases.php).
 
 Once we have ImageMagick, let's add Paperclip to our Gemfile:
 
@@ -39,17 +35,13 @@ Once we have ImageMagick, let's add Paperclip to our Gemfile:
 gem "paperclip"
 ```
 
-Run `bundle install` to finish it up. If your Rails server is already
-running, remember to restart it so that it has access to the new gem.
+Run `bundle install` to finish it up. If your Rails server is already running, remember to restart it so that it has access to the new gem.
 
 ### Adding An Avatar To An Author
 
-Now that we have Paperclip installed, let's jump right into adding
-avatar images to our `Author` model.
+Now that we have Paperclip installed, let's jump right into adding avatar images to our `Author` model.
 
-First, we need to wire up our model to use Paperclip's
-`has_attached_file` method, and tell it what attribute name we want to
-use to access the attached file. In this case, we'll go with `avatar`.
+First, we need to wire up our model to use Paperclip's `has_attached_file` method, and tell it what attribute name we want to use to access the attached file. In this case, we'll go with `avatar`.
 
 ```ruby
 # models/author.rb
@@ -61,12 +53,9 @@ class Author < ActiveRecord::Base
 end
  ```
 
-The `validates_attachment_content_type` validator is provided by
-Paperclip, and ensures that we get an image file when we expect one.
-This validator is required by default.
+The `validates_attachment_content_type` validator is provided by Paperclip, and ensures that we get an image file when we expect one. This validator is required by default.
 
-Now we need to add the `avatar` field to our table via a migration.
-Paperclip provides a generator for us, so we can run:
+Now we need to add the `avatar` field to our table via a migration. Paperclip provides a generator for us, so we can run:
 
 `rails g paperclip author avatar`
 
@@ -84,16 +73,11 @@ class AddAvatarColumnsToUsers < ActiveRecord::Migration
 end
 ```
 
-**Note:** Paperclip provides two new methods for use in migrations:
-`add_attachment` and `remove_attachment`. Because these are custom
-attachment methods, Rails won't know how to automatically reverse an
-`add_attachment` migration, so you need `up` and `down` methods in the
-migration rather than simply using `change`.
+**Note:** Paperclip provides two new methods for use in migrations: `add_attachment` and `remove_attachment`. Because these are custom attachment methods, Rails won't know how to automatically reverse an `add_attachment` migration, so you need `up` and `down` methods in the migration rather than simply using `change`.
 
 Run `rake db:migrate` to add the column.
 
-Now we need to set up the form view to give us a way to upload an
-avatar. Let's add that to the author form partial:
+Now we need to set up the form view to give us a way to upload an avatar. Let's add that to the author form partial:
 
 ```erb
 # views/authors/_form.html.erb
@@ -109,13 +93,9 @@ avatar. Let's add that to the author form partial:
 <% end %>
 ```
 
-Adding `html: { multipart: true }` as a parameter to `form_for` will
-generate a form that knows it will be submitting both text and binary
-data to the server. Then we use the `file_field` helper to generate the
-appropriate input and "choose" button to attach the file.
+Adding `html: { multipart: true }` as a parameter to `form_for` will generate a form that knows it will be submitting both text and binary data to the server. Then we use the `file_field` helper to generate the appropriate input and "choose" button to attach the file.
 
-Finally, we need to update our strong params in the controller to allow
-the new `avatar` field to be used for mass assignment:
+Finally, we need to update our strong params in the controller to allow the new `avatar` field to be used for mass assignment:
 
 ```ruby
 # authors_controller.rb
@@ -129,13 +109,11 @@ the new `avatar` field to be used for mass assignment:
   end
 ```
 
-Now if we run our server with `rails s` and browse to `/authors/new`, we
-should be able to create an author with an avatar.
+Now if we run our server with `rails s` and browse to `/authors/new`, we should be able to create an author with an avatar.
 
 ### Displaying The Avatar
 
-We've attached the avatar, but now we need to display it to the user.
-Here's where Paperclip really starts to shine.
+We've attached the avatar, but now we need to display it to the user. Here's where Paperclip really starts to shine.
 
 Let's add the avatar to our author `show` view:
 
@@ -149,13 +127,9 @@ Let's add the avatar to our author `show` view:
 # ...
 ```
 
-Simple as that! Paperclip provides the `url` method on our `avatar`
-so that no matter where it's stored, we can always use it in an
-`image_tag`. Now we're starting to see why using Paperclip is more
-efficient than doing it ourselves.
+Simple as that! Paperclip provides the `url` method on our `avatar` so that no matter where it's stored, we can always use it in an `image_tag`. Now we're starting to see why using Paperclip is more efficient than doing it ourselves.
 
-Let's also add the avatar to the author `index` view, so we can see them
-in the list.
+Let's also add the avatar to the author `index` view, so we can see them in the list.
 
 ```erb
 # views/authors/index.html.erb
@@ -171,17 +145,13 @@ in the list.
 #...
 ```
 
-Now if we load `/authors`, we'll see avatars. Unless they don't have
-one. Now what?
+Now if we load `/authors`, we'll see avatars. Unless they don't have one. Now what?
 
 ### Setting Default Avatars
 
-Happily enough, Paperclip gives us an elegant way of dealing with
-missing avatars that doesn't involve us having to go into every view
-that displays an avatar and writing a bunch of logic.
+Happily enough, Paperclip gives us an elegant way of dealing with missing avatars that doesn't involve us having to go into every view that displays an avatar and writing a bunch of logic.
 
-Let's go back to our model and tell `has_attached_file` what the default
-is when no file has been attached:
+Let's go back to our model and tell `has_attached_file` what the default is when no file has been attached:
 
 ```ruby
 # author.rb
@@ -193,32 +163,23 @@ class Author < ActiveRecord::Base
 end
 ```
 
-You can store default images to match each style, e.g. in this case we
-would have a thumbnail default as well as an original default. You just
-need the supporting folders in your `app/assets/images` directory to
-match the style names ("original" is the default, unprocessed style).
+You can store default images to match each style, e.g. in this case we would have a thumbnail default as well as an original default. You just need the supporting folders in your `app/assets/images` directory to match the style names ("original" is the default, unprocessed style).
 
-**Note:** We have to place an image named `default.png` in our
-`app/assets/images/thumb` and `app/assets/images/original` folders (already provided), that part doesn't automatically happen via Paperclip (Image)Magick.
+**Note:** We have to place an image named `default.png` in our `app/assets/images/thumb` and `app/assets/images/original` folders (already provided), that part doesn't automatically happen via Paperclip (Image)Magick.
 
 Reload `/authors`. No more broken images!
 
 ### Generating Thumbnails With Paperclip
 
-Depending on how big an author's photo is, our `index` page might have
-wildly different-sized images in the list.
+Depending on how big an author's photo is, our `index` page might have wildly different-sized images in the list.
 
-We can easily constrain those with CSS, but what we really want to do is
-create a thumbnail to be used in the list so we aren't loading a bunch
-of giant images and slowing things down.
+We can easily constrain those with CSS, but what we really want to do is create a thumbnail to be used in the list so we aren't loading a bunch of giant images and slowing things down.
 
-In order to do this, we're going to have to write a lot of low-level
-code using ImageMagick to process the avatar.
+In order to do this, we're going to have to write a lot of low-level code using ImageMagick to process the avatar.
 
 ![wait what](http://i.giphy.com/fNkhImNAjA5FK.gif)
 
-Kidding! Of course Paperclip already does this for us! Let's get back
-into our `Author`.
+Kidding! Of course Paperclip already does this for us! Let's get back into our `Author`.
 
 ```ruby
 # author.rb
@@ -230,9 +191,7 @@ class Author < ActiveRecord::Base
 end
 ```
 
-And just like that, Paperclip will process the image and create a
-thumbnail style for us. To use it in the view, simply pass the symbol
-for the style to the `url` method:
+And just like that, Paperclip will process the image and create a thumbnail style for us. To use it in the view, simply pass the symbol for the style to the `url` method:
 
 ```erb
 # views/authors/index.html.erb
@@ -248,23 +207,16 @@ for the style to the `url` method:
 #...
 ```
 
-If we go to `/authors/new` and create an author, then return to
-`/authors`, we'll see that the thumbnail has been generated for the new
-author, but now one or more of our existing author's thumbnails is a broken image.
+If we go to `/authors/new` and create an author, then return to `/authors`, we'll see that the thumbnail has been generated for the new author, but now one or more of our existing author's thumbnails is a broken image.
 
-That's because we added images to those authors before we defined the
-`:thumb` style, so we need to tell Paperclip to update our existing images with
-the new style. Fortunately, Paperclip provides a rake task for exactly
+That's because we added images to those authors before we defined the `:thumb` style, so we need to tell Paperclip to update our existing images with the new style. Fortunately, Paperclip provides a rake task for exactly
 that.
 
-On the console, run `rake paperclip:refresh:missing_styles`, then
-refresh that `/authors` page and we should have thumbnails for everyone.
+On the console, run `rake paperclip:refresh:missing_styles`, then refresh that `/authors` page and we should have thumbnails for everyone.
 
 ## Summary
 
-We've seen how easy it is to upload and image attachments in our
-application using the Paperclip gem, have default avatars, and create
-thumbnails with very little code.
+We've seen how easy it is to upload and image attachments in our application using the Paperclip gem, have default avatars, and create thumbnails with very little code.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
 
