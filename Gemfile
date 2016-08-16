@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Paperclip gem for images
+gem "paperclip"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
