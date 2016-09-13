@@ -221,3 +221,5 @@ We've seen how easy it is to upload and image attachments in our application usi
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
+
+###
