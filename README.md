@@ -1,4 +1,4 @@
-# Uploading Images With Paperclip
+# Uploading Images with Paperclip
 
 ## Objectives
 
@@ -49,7 +49,7 @@ First, we need to wire up our model to use Paperclip's `has_attached_file` metho
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end
  ```
 
@@ -62,12 +62,14 @@ Now we need to add the `avatar` field to our table via a migration. Paperclip pr
 This will generate a migration that looks something like:
 
 ```ruby
-class AddAvatarColumnsToUsers < ActiveRecord::Migration
-  def up
-    add_attachment :authors, :avatar
+class AddAttachmentAvatarToAuthors < ActiveRecord::Migration
+  def self.up
+    change_table :authors do |t|
+      t.attachment :avatar
+    end
   end
 
-  def down
+  def self.down
     remove_attachment :authors, :avatar
   end
 end
@@ -149,7 +151,7 @@ Now if we load `/authors`, we'll see avatars. Unless they don't have one. Now wh
 
 ### Setting Default Avatars
 
-Happily enough, Paperclip gives us an elegant way of dealing with missing avatars that doesn't involve us having to go into every view that displays an avatar and writing a bunch of logic.
+In another stroke of awesomeness, Paperclip gives us an elegant way of dealing with missing avatars that doesn't involve us having to go into every view that displays an avatar and write a bunch of logic.
 
 Let's go back to our model and tell `has_attached_file` what the default is when no file has been attached:
 
@@ -159,7 +161,7 @@ Let's go back to our model and tell `has_attached_file` what the default is when
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar, default_url: ':style/default.png'
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end
 ```
 
@@ -187,7 +189,7 @@ Kidding! Of course Paperclip already does this for us! Let's get back into our `
 class Author < ActiveRecord::Base
   has_many :posts
   has_attached_file :avatar, default_url: ':style/default.png', styles: { thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end
 ```
 
@@ -212,12 +214,10 @@ If we go to `/authors/new` and create an author, then return to `/authors`, we'l
 That's because we added images to those authors before we defined the `:thumb` style, so we need to tell Paperclip to update our existing images with the new style. Fortunately, Paperclip provides a rake task for exactly
 that.
 
-On the console, run `rake paperclip:refresh:missing_styles`, then refresh that `/authors` page and we should have thumbnails for everyone.
+In the terminal, run `rake paperclip:refresh:missing_styles`, then refresh that `/authors` page and we should have thumbnails for everyone.
 
 ## Summary
 
-We've seen how easy it is to upload and image attachments in our application using the Paperclip gem, have default avatars, and create thumbnails with very little code.
+We've seen how easy it is to upload image attachments, have default avatars, and create thumbnails in our application with very little code thanks to the Paperclip gem.
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/rails-paperclip-readme'>Paperclip</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-paperclip-readme' title='Uploading Images with Paperclip'>Uploading Images with Paperclip</a> on Learn.co and start learning to code for free.</p>
