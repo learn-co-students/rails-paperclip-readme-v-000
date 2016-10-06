@@ -1,5 +1,6 @@
 <h1><%= @author.name %></h1>
 <p><%= @author.bio %></p>
+<%= image_tag @author.avatar.url(:thumb) %>
 <p>Posts:</p>
 <% @author.posts.each do |post| %>
   <div><%= post.title %></div>
