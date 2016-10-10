@@ -47,3 +47,5 @@ group :development do
   gem 'spring'
 end
 
+# handle images w/ Paperclip
+gem 'paperclip'
