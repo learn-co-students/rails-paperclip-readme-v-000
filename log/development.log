@@ -266,3 +266,234 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (17.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPost Load (12.5ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 2]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 4]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthor Load (11.2ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 1]]
+  [1m[36m (5.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (4.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 3]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 4]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20161111195213)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (12.7ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161111195213"]]
+  [1m[35m (4.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-11-11 14:57:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (13.9ms)
+Completed 200 OK in 224ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-11-11 14:57:21 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (158.6ms)
+  Rendered authors/new.html.erb within layouts/application (178.4ms)
+Completed 200 OK in 2563ms (Views: 2533.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-11 14:57:23 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-11-11 14:57:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-11-11 14:57:23 -0500
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-11 14:57:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-11 14:57:24 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-11-11 14:57:24 -0500
+
+
+Started GET "/authors" for ::1 at 2016-11-11 15:00:51 -0500
+Processing by AuthorsController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/jchu773/Development/code/rails-paperclip-readme-v-000/app/models/author.rb:3: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  has_attached_file :avatar, default_url ':style/default.png'
+                                          ^):
+  app/models/author.rb:3: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/controllers/authors_controller.rb:7:in `index'
+
+
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (127.2ms)
+
+
+Started GET "/authors" for ::1 at 2016-11-11 15:01:07 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 70ms (Views: 64.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors" for ::1 at 2016-11-11 15:01:22 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-11-11 15:01:57 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-11-11 15:01:58 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (3.6ms)
+  Rendered authors/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 56ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/authors" for ::1 at 2016-11-11 15:02:28 -0500
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o2lIrmbKBy9K2YR/Ty60NNzTzwrN0NVIegi1PbyyZKuNhC9xlW8zAOocEDIW+kAEMi00PsKo2pEbY/Tx/FBKnA==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff585c85fc8 @tempfile=#<Tempfile:/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/RackMultipart20161111-23040-1o6y4ap.jpg>, @original_filename="jason-chu-cover.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"jason-chu-cover.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Jason", "bio"=>"Hi, I'm cool"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23040-1bp5a79.jpg'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23040-415j7k.jpg'
+  [1m[35mSQL (9.5ms)[0m  INSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "Hi, I'm cool"], ["name", "Jason"], ["avatar_file_name", "jason-chu-cover.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 2842137], ["avatar_updated_at", "2016-11-11 20:02:28.317710"], ["created_at", "2016-11-11 20:02:29.316207"], ["updated_at", "2016-11-11 20:02:29.316207"]]
+  [1m[36m (137.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 1205ms (ActiveRecord: 147.6ms)
+
+
+Started GET "/authors/5" for ::1 at 2016-11-11 15:02:29 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (69.6ms)
+Completed 200 OK in 151ms (Views: 86.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-11-11 15:02:50 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (7.9ms)
+  Rendered authors/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 123ms (Views: 93.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/authors" for ::1 at 2016-11-11 15:02:59 -0500
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeZ0sHecQqGok5PqsE3Jx/aq4DxqV1V8SJXmelha43xzCxNvhDl2jghWB6fpmT33GFQbCGUvWqUp/qe2GLjNSw==", "author"=>{"name"=>"Kyle", "bio"=>"Bio for Kyle"}, "commit"=>"Create Author"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["bio", "Bio for Kyle"], ["name", "Kyle"], ["created_at", "2016-11-11 20:02:59.230748"], ["updated_at", "2016-11-11 20:02:59.230748"]]
+  [1m[35m (4.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/6
+Completed 302 Found in 16ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/authors/6" for ::1 at 2016-11-11 15:02:59 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 6]]
+  Rendered authors/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-11-11 15:02:59 -0500
+
+
+Started GET "/authors/5" for ::1 at 2016-11-11 15:04:17 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 76ms (Views: 53.9ms | ActiveRecord: 1.3ms)
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23174-ofg2aw.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23174-16vq3b2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23174-16vq3b2.jpg[0]'
+Command :: convert '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/c2e61cb861d59aecd5dea6e6fbffd40d20161111-23174-16vq3b2.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/1m/x67qrrj124b501d277w_w8hc0000gp/T/251d0a8ab5dbdcd79caa713361f5dd1a20161111-23174-13meqko'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2016-11-11 20:05:46.958703"], ["avatar_file_name", "jason-chu-cover.jpg"], ["updated_at", "2016-11-11 20:05:49.075980"], ["id", 5]]
+  [1m[35m (4.7ms)[0m  commit transaction
+
+
+Started GET "/authors/" for ::1 at 2016-11-11 15:06:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `avatr' for #<Author:0x007fbf8d0b9600>):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag author.avatr.url(:thumb) %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb__1713089988987831078_70230318906920'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb__1713089988987831078_70230318906920'
+
+
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.6ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (61.8ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jchu773/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (159.1ms)
+
+
+Started GET "/authors/" for ::1 at 2016-11-11 15:06:33 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (349.5ms)
+Completed 200 OK in 461ms (Views: 460.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-11-11 15:06:34 -0500
