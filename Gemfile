@@ -47,3 +47,5 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'paperclip', '5.1.0'
