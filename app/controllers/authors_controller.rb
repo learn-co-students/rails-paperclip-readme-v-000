@@ -14,12 +14,12 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find(params[:id])
     @author.update(author_params)
-    redirect_to author_path(@author)
+    redirect_to @author
   end
 
   def create
     @author = Author.create(author_params)
-    redirect_to author_path(@author)
+    redirect_to @author
   end
 
   def new
