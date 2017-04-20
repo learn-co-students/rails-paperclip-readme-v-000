@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Paperclip added for the handling of attachments
+gem "paperclip"
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
