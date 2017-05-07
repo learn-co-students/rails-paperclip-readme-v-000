@@ -266,3 +266,287 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 2]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthor Load (0.5ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Stephen King"], ["genre", "Romance"], ["bio", "Writes a lot of scary things."], ["created_at", "2017-05-07 06:43:16.509161"], ["updated_at", "2017-05-07 06:43:16.509161"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ariana Huffington"], ["genre", "Comedy"], ["bio", "Up and comer. One to watch."], ["created_at", "2017-05-07 06:43:16.512759"], ["updated_at", "2017-05-07 06:43:16.512759"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Horse Ebooks"], ["genre", "?????"], ["bio", "Eclectic."], ["created_at", "2017-05-07 06:43:16.515435"], ["updated_at", "2017-05-07 06:43:16.515435"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Something About Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["author_id", 5], ["created_at", "2017-05-07 06:43:16.525142"], ["updated_at", "2017-05-07 06:43:16.525142"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Spam Spam Spam"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["author_id", 6], ["created_at", "2017-05-07 06:43:16.528379"], ["updated_at", "2017-05-07 06:43:16.528379"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["author_id", 7], ["created_at", "2017-05-07 06:43:16.531010"], ["updated_at", "2017-05-07 06:43:16.531010"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["created_at", "2017-05-06 00:00:00.000000"], ["updated_at", "2017-05-07 06:43:16.539503"], ["id", 7]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20170507064607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170507064607"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/authors/new" for ::1 at 2017-05-07 02:49:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (23.1ms)
+  Rendered authors/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 761ms (Views: 733.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-05-07 02:49:17 -0400
+
+
+Started POST "/authors" for ::1 at 2017-05-07 02:49:42 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ae3ZoDY77l1jw0J4Gj8buBT7sobk+na9jsiRlUcZpilJqikx4dXahTptzpsIL7L09R1ku+YsFgaDj1LgepwFug==", "author"=>{"name"=>"ds", "bio"=>"ds"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["bio", "ds"], ["name", "ds"], ["created_at", "2017-05-07 06:49:42.573409"], ["updated_at", "2017-05-07 06:49:42.573409"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/8
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/authors/8" for ::1 at 2017-05-07 02:49:42 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 8]]
+  Rendered authors/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 60ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors/new" for ::1 at 2017-05-07 02:50:14 -0400
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (5.1ms)
+  Rendered authors/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for ::1 at 2017-05-07 02:50:24 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OpRjqZLWKoSDF36MFo/YzLhG5ONRnEWFWodqOhbjSjIraEfcaVsckui0RkiSpYv0wfNro+QEa0YLd7d1d4uuw==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc382298db0 @tempfile=#<Tempfile:/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/RackMultipart20170507-1647-1ue1gfl.png>, @original_filename="Screen Shot 2017-05-06 at 10.56.00 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"Screen Shot 2017-05-06 at 10.56.00 PM.png\"\r\nContent-Type: image/png\r\n">, "name"=>"a", "bio"=>"d"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1647-fui9tj.png'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1647-tltbu9.png'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "d"], ["name", "a"], ["avatar_file_name", "Screen_Shot_2017-05-06_at_10.56.00_PM.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 870272], ["avatar_updated_at", "2017-05-07 06:50:24.268499"], ["created_at", "2017-05-07 06:50:24.299416"], ["updated_at", "2017-05-07 06:50:24.299416"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/9
+Completed 302 Found in 53ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/authors/9" for ::1 at 2017-05-07 02:50:24 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 9]]
+  Rendered authors/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-07 02:52:39 -0400
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/avatars/original/missing.png" for ::1 at 2017-05-07 02:52:39 -0400
+
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/janine/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/janine/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/janine/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.3ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.6ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (97.1ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (209.7ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-07 02:58:09 -0400
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2017-05-07 02:58:09 -0400
+
+
+Started GET "/authors/new" for ::1 at 2017-05-07 03:00:03 -0400
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (3.2ms)
+  Rendered authors/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 49ms (Views: 37.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/authors" for ::1 at 2017-05-07 03:00:18 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwg/ZNtS6delkE2ggfqoSuh220sXdCc9Yv8bM0/uwBSrT8/1DLzdD/w+wUOT6gEGCZANdhWiR4ZvuNhGcmtjhw==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc388934ee8 @tempfile=#<Tempfile:/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/RackMultipart20170507-1647-28dpp0.png>, @original_filename="Screen Shot 2017-05-06 at 10.56.00 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"Screen Shot 2017-05-06 at 10.56.00 PM.png\"\r\nContent-Type: image/png\r\n">, "name"=>"fdsa", "bio"=>"fdsa"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1647-1w7uw8d.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1647-3pyqv8.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1647-3pyqv8.png[0]'
+Command :: convert '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1647-3pyqv8.png[0]' -auto-orient -resize "100x100>" '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/069abd67bfb90f404168a49afaa7997b20170507-1647-16ww63e'
+  [1m[35m (0.3ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1647-lkl1nb.png'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "fdsa"], ["name", "fdsa"], ["avatar_file_name", "Screen_Shot_2017-05-06_at_10.56.00_PM.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 870272], ["avatar_updated_at", "2017-05-07 07:00:18.152207"], ["created_at", "2017-05-07 07:00:18.400246"], ["updated_at", "2017-05-07 07:00:18.400246"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/10
+Completed 302 Found in 274ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/authors/10" for ::1 at 2017-05-07 03:00:18 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 10]]
+  Rendered authors/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-8dbzas.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-rodf3l.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-rodf3l.png[0]'
+Command :: convert '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-rodf3l.png[0]' -auto-orient -resize "100x100>" '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/6dd5be61e4368c76a5d86f41702b9e4420170507-1698-g372zp'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2017-05-07 07:00:58.975045"], ["avatar_file_name", "Screen_Shot_2017-05-06_at_10.56.00_PM.png"], ["updated_at", "2017-05-07 07:00:59.188809"], ["id", 9]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-tte65r.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-u8piut.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-u8piut.png[0]'
+Command :: convert '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1698-u8piut.png[0]' -auto-orient -resize "100x100>" '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/bd2624e83da89ee53d8d8f3839d10ba720170507-1698-4dbxon'
+[paperclip] deleting /Users/janine/Sites/flatiron_learn/rails-paperclip-readme-v-000/public/system/authors/avatars/000/000/010/thumb/Screen_Shot_2017-05-06_at_10.56.00_PM.png
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?  [["avatar_updated_at", "2017-05-07 07:00:59.204894"], ["avatar_file_name", "Screen_Shot_2017-05-06_at_10.56.00_PM.png"], ["updated_at", "2017-05-07 07:00:59.409976"], ["id", 10]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2017-05-07 03:01:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/janine/.rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-07 03:01:20 -0400
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (275.5ms)
+Completed 200 OK in 361ms (Views: 351.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authors/new" for ::1 at 2017-05-07 03:01:28 -0400
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (27.9ms)
+  Rendered authors/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for ::1 at 2017-05-07 03:01:37 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Zn6ArqaqmB2Jy/468I2bbVMOsip7CF3JEH4ezrntmTZ3gqTbXSeuC+Joxv50p8hVKrs9as6QcwpBjsOB2IV9w==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc74d163520 @tempfile=#<Tempfile:/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/RackMultipart20170507-1713-1l54vlq.png>, @original_filename="Screen Shot 2017-05-06 at 10.56.00 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"Screen Shot 2017-05-06 at 10.56.00 PM.png\"\r\nContent-Type: image/png\r\n">, "name"=>"fdsaf", "bio"=>"ff"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1713-12fw1sf.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1713-1a3p5pk.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1713-1a3p5pk.png[0]'
+Command :: convert '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/352ecd04096d6f38e8100196756facb520170507-1713-1a3p5pk.png[0]' -auto-orient -resize "100x100>" '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/c637c83b9b06dc1bcb7717515b46791f20170507-1713-p9d7vr'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/mc/yn88kbcj71x4z7fd8py9g_cm0000gn/T/9446b09a9868c301969a7c2529d1e88720170507-1713-1ncuhgg.png'
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "ff"], ["name", "fdsaf"], ["avatar_file_name", "Screen_Shot_2017-05-06_at_10.56.00_PM.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 870272], ["avatar_updated_at", "2017-05-07 07:01:37.872479"], ["created_at", "2017-05-07 07:01:38.111648"], ["updated_at", "2017-05-07 07:01:38.111648"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/11
+Completed 302 Found in 291ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/authors/11" for ::1 at 2017-05-07 03:01:38 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 11]]
+  Rendered authors/show.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 91ms (Views: 79.7ms | ActiveRecord: 0.8ms)
