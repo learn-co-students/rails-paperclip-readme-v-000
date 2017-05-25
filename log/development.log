@@ -266,3 +266,203 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20170525200618)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170525200618"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2017-05-25 13:15:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 55ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 13:16:07 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:16:21 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 951ms (Views: 938.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-05-25 13:16:22 -0700
+
+
+Started GET "/avatars/original/missing.png" for ::1 at 2017-05-25 13:16:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/bentonwong/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/bentonwong/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/bentonwong/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (508.7ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (143.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (334.2ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:24:25 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 54ms (Views: 46.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2017-05-25 13:24:26 -0700
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:24:28 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.9ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:27:45 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.7ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (24.3ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 2.7ms)
+
+ActionView::Template::Error (undefined method `call' for #<Paperclip::Attachment:0x007fc6bc02bae0>
+Did you mean?  caller):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag author.avatar.(:thumb) %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb___1747918649444014091_70245758656720'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb___1747918649444014091_70245758656720'
+
+
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (140.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (92.9ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/bentonwong/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (215.1ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:28:01 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 54ms (Views: 52.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2017-05-25 13:28:01 -0700
+
+
+Started GET "/authors/new" for ::1 at 2017-05-25 13:28:11 -0700
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (22.3ms)
+  Rendered authors/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for ::1 at 2017-05-25 13:28:47 -0700
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"icEAG5ATX43b65NxcBNFAEiVYfLGslEGJFhdLuNIg1One9fuCzlbVu+sx/frN6n/DYqC5AM3MDPY8T/0l7Yvww==", "author"=>{"name"=>"Tom Clancy", "bio"=>"Writes techno-thrillers"}, "commit"=>"Create Author"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "authors" ("bio", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["bio", "Writes techno-thrillers"], ["name", "Tom Clancy"], ["created_at", "2017-05-25 20:28:47.778922"], ["updated_at", "2017-05-25 20:28:47.778922"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 19ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/authors/5" for ::1 at 2017-05-25 13:28:47 -0700
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 136ms (Views: 123.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:29:10 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:29:30 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2017-05-25 13:31:09 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
