@@ -15,7 +15,7 @@ author3 = Author.create(name: "Horse Ebooks", genre: "?????", bio: "Eclectic.")
 
 #this makes use of HEREDOCs, which you can read more about here, doc: https://en.wikipedia.org/wiki/Here_document
 post1 = <<-POST1
-  Last night I dreamt there is more to life than to bully friends.
+  Last night I dreamed there is more to life than to bully friends.
   What has that got to do with Democrats, you probably wonder...
   The answer is here. Right here. Back in school my hair was silly.
   Nevermind about the details, but... In a nut-shell: And still,
@@ -33,7 +33,7 @@ post2 = <<-POST2
   POST2
 
 post3 = <<-POST3
-  Last night I dreamt we simply need to realize to be so competitive.
+  Last night I realized we need to stop relying on sentence generators.
   Does the responsibility lie with Links, you probably wonder...
   The answer is here. Right here. About the time I broke up with my
   ex I was totally into music. Whatever. So that's that.
