@@ -43,7 +43,7 @@ Now that we have Paperclip installed, let's jump right into adding avatar images
 
 First, we need to wire up our model to use Paperclip's `has_attached_file` method, and tell it what attribute name we want to use to access the attached file. In this case, we'll go with `avatar`.
 
-```ruby
+
 # models/author.rb
 
 class Author < ActiveRecord::Base
