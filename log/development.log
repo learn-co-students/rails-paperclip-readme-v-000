@@ -266,3 +266,394 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20171128135259)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128135259"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-28 07:59:04 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.8ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (13.1ms)
+  Rendered authors/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 447ms (Views: 429.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-28 07:59:15 -0600
+
+
+Started GET "/authors/" for 127.0.0.1 at 2017-11-28 08:01:27 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb__1692408262039431212_70259189256740'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb__1692408262039431212_70259189256740'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.7ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (9.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (18.2ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:01:46 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb__1171244185248446888_33250940'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb__1171244185248446888_33250940'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (7.9ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (16.8ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:03:49 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb__1171244185248446888_33250940'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb__1171244185248446888_33250940'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (8.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (16.4ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:03:59 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb___155988155215246054_33807460'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb___155988155215246054_33807460'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.7ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.1ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:04:37 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb___155988155215246054_33807460'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb___155988155215246054_33807460'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (9.9ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (19.4ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:05:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    3: <ul>
+    4: <% @authors.each do |author| %>
+    5:   <li>
+    6:   <%= image_tag @author.avatar.url %>
+    7:   <%= link_to author.name, author_path(author) %><br>
+    8:   <%= author.bio %>
+    9:   </li>
+  app/views/authors/index.html.erb:6:in `block in _app_views_authors_index_html_erb___3116427183080967945_36370320'
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb___3116427183080967945_36370320'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (8.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (17.7ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:06:47 -0600
+Processing by AuthorsController#index as HTML
+  Rendered authors/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `pry' for #<Binding:0x00000004062760>
+Did you mean?  try):
+    1: <h1>Blog Authors</h1>
+    2: <%= link_to "Add Author", new_author_path %>
+    3: <ul>
+    4:   <%=binding.pry%>
+    5: <% @authors.each do |author| %>
+    6:   <li>
+    7:   <%= image_tag @author.avatar.url %>
+  app/views/authors/index.html.erb:4:in `_app_views_authors_index_html_erb___3116427183080967945_33805260'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.3ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.4ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:07:33 -0600
+Processing by AuthorsController#index as HTML
+  Rendered authors/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+LoadError (cannot load such file -- pry):
+  app/views/authors/index.html.erb:1:in `_app_views_authors_index_html_erb___3116427183080967945_34398220'
+
+
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (8.5ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/shaun/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (16.6ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:08:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (53414.8ms)
+Completed   in 53442ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:10:02 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (136.1ms)
+Completed 200 OK in 179ms (Views: 170.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for 127.0.0.1 at 2017-11-28 08:10:02 -0600
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:12:37 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for 127.0.0.1 at 2017-11-28 08:12:37 -0600
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (186.8ms)
+Completed 200 OK in 239ms (Views: 230.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for 127.0.0.1 at 2017-11-28 08:13:07 -0600
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-11-28 08:13:38 -0600
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (34.1ms)
+  Rendered authors/new.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2017-11-28 08:13:58 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j7WbmVrsPaZ/q+RlSTcSSIhsTZ2bLB+bQGalSkW5RXpD8H2hrA7ysGTygrc5ik1GghVx+1ikX1c1RZvhdwpUjg==", "author"=>{"name"=>"William Shakespeare", "bio"=>"Oldy but a goodie"}, "commit"=>"Create Author"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "authors" ("bio", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["bio", "Oldy but a goodie"], ["name", "William Shakespeare"], ["created_at", "2017-11-28 14:13:58.870741"], ["updated_at", "2017-11-28 14:13:58.870741"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/authors/5" for 127.0.0.1 at 2017-11-28 08:13:58 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 35ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/" for 127.0.0.1 at 2017-11-28 08:14:14 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+
+
+Started GET "/authors/" for 127.0.0.1 at 2017-11-28 08:16:14 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (128.4ms)
+Completed 200 OK in 168ms (Views: 160.4ms | ActiveRecord: 0.3ms)
