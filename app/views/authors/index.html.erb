@@ -2,7 +2,8 @@
 <%= link_to "Add Author", new_author_path %>
 <ul>
 <% @authors.each do |author| %>
-  <li>
+<li>
+   <% image_tag author.avatar.url(:thumb) %>
   <%= link_to author.name, author_path(author) %><br>
   <%= author.bio %>
   </li>
