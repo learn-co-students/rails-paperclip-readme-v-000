@@ -1,4 +1,7 @@
-<%= form_for @author do |f| %>
+<!--parameter for form_for that lets it know it's submitting binary and text data-->
+<%= form_for @author, html:{multipart:true} do |f| %>
+<%= f.label :avatar %>
+<%= f.file_field :avatar %><br>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :bio %>
