@@ -1,4 +1,7 @@
 <h1><%= @author.name %></h1>
+<!-- Paperclip provides the url method on our avatar -->
+<!-- passing in thumb applys style requirements to pix -->
+<%= image_tag @author.avatar.url(:thumb) %>
 <p><%= @author.bio %></p>
 <p>Posts:</p>
 <% @author.posts.each do |post| %>
