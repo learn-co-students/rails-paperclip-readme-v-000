@@ -1,4 +1,10 @@
-<%= form_for @author do |f| %>
+<!-- Adding html: { multipart: true } as a parameter to form_for will generate a
+    form that knows it will be submitting both text and binary data to the server.  -->
+<%= form_for @author, html: {multipart: true} do |f| %>
+  <!-- Then we use the file_field helper to generate the appropriate input and
+      "choose" button to attach the file. -->
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :bio %>
