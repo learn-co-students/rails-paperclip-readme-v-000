@@ -266,3 +266,203 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 2]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 4]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthor Load (0.6ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Stephen King"], ["genre", "Romance"], ["bio", "Writes a lot of scary things."], ["created_at", "2017-12-29 04:03:31.611941"], ["updated_at", "2017-12-29 04:03:31.611941"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ariana Huffington"], ["genre", "Comedy"], ["bio", "Up and comer. One to watch."], ["created_at", "2017-12-29 04:03:31.615855"], ["updated_at", "2017-12-29 04:03:31.615855"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Horse Ebooks"], ["genre", "?????"], ["bio", "Eclectic."], ["created_at", "2017-12-29 04:03:31.618453"], ["updated_at", "2017-12-29 04:03:31.618453"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Something About Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["author_id", 5], ["created_at", "2017-12-29 04:03:31.629384"], ["updated_at", "2017-12-29 04:03:31.629384"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Spam Spam Spam"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["author_id", 6], ["created_at", "2017-12-29 04:03:31.632988"], ["updated_at", "2017-12-29 04:03:31.632988"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["author_id", 7], ["created_at", "2017-12-29 04:03:31.636627"], ["updated_at", "2017-12-29 04:03:31.636627"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["created_at", "2017-12-28 00:00:00.000000"], ["updated_at", "2017-12-29 04:03:31.641531"], ["id", 7]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20171229041521)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171229041521"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2017-12-28 20:19:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/kevinkim/.rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 36ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2017-12-28 20:19:40 -0800
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (33.6ms)
+  Rendered authors/new.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 1294ms (Views: 1276.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-12-28 20:19:42 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-12-28 20:19:42 -0800
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-12-28 20:19:42 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-12-28 20:19:42 -0800
+
+
+Started GET "/authors/new" for ::1 at 2017-12-28 20:21:48 -0800
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (7.8ms)
+  Rendered authors/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:36:14 -0800
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (3.8ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 98ms (Views: 80.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2017-12-28 20:36:15 -0800
+
+
+Started GET "/authors/new" for ::1 at 2017-12-28 20:36:36 -0800
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (11.0ms)
+  Rendered authors/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for ::1 at 2017-12-28 20:36:55 -0800
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EXfmzYcyIQ7Wp0ifTTT0egqMEi7Eep/4+R+nDYXyNuuNbmgjHI1kgTSZVFOy2xuMeJhNJw5/E66mjbF7JtpKMA==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fe9b76d6700 @tempfile=#<Tempfile:/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/RackMultipart20171228-74283-1gjs3lo.png>, @original_filename="tompng.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"tompng.png\"\r\nContent-Type: image/png\r\n">, "name"=>"tom", "bio"=>"creator of myspace"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74283-zkzfq9.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74283-1cjydlt.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74283-1cjydlt.png[0]'
+Command :: convert '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74283-1cjydlt.png[0]' -auto-orient -resize "100x100>" '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/166e5cc8eeef14425ebd1177e314b6bb20171228-74283-km8ulu'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74283-q9y30i.png'
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "creator of myspace"], ["name", "tom"], ["avatar_file_name", "tompng.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 102628], ["avatar_updated_at", "2017-12-29 04:36:55.287714"], ["created_at", "2017-12-29 04:36:55.611227"], ["updated_at", "2017-12-29 04:36:55.611227"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/8
+Completed 302 Found in 466ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/authors/8" for ::1 at 2017-12-28 20:36:55 -0800
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 8]]
+  Rendered authors/show.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 120ms (Views: 99.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:37:00 -0800
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+  [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74434-dfyuxy.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74434-rmfy4v.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74434-rmfy4v.png[0]'
+Command :: convert '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/de2fb6450f224f324c074311c43d9df920171228-74434-rmfy4v.png[0]' -auto-orient -resize "100x100>" '/var/folders/57/2g7g04893yncg9gvj5814hzr0000gn/T/9ab66d14ef2ef9c5ce55af73bb0aee9520171228-74434-1uf6tpp'
+[paperclip] deleting /Users/kevinkim/Desktop/flatiron_web_dev/labs/011-js-rails/rails-paperclip-readme-v-000/public/system/authors/avatars/000/000/008/thumb/tompng.png
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2017-12-29 04:38:16.754420"], ["avatar_file_name", "tompng.png"], ["updated_at", "2017-12-29 04:38:16.972282"], ["id", 8]]
+  [1m[35m (1.2ms)[0m  commit transaction
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:38:19 -0800
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:38:22 -0800
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:38:40 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (238.5ms)
+Completed 200 OK in 317ms (Views: 295.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:39:01 -0800
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.7ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 79ms (Views: 69.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:39:19 -0800
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:39:35 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (233.5ms)
+Completed 200 OK in 309ms (Views: 288.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors" for ::1 at 2017-12-28 20:41:24 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.5ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (251.7ms)
+Completed 200 OK in 337ms (Views: 316.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2017-12-28 20:41:25 -0800
