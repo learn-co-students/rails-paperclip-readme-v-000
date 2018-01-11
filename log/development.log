@@ -266,3 +266,331 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20180111162856)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180111162856"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/author/new" for ::1 at 2018-01-11 11:33:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/author/new"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.1ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (91.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.5ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (109.5ms)
+
+
+Started GET "/authors/new" for ::1 at 2018-01-11 11:33:37 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (12.3ms)
+  Rendered authors/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 598ms (Views: 587.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-01-11 11:33:38 -0500
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-01-11 11:33:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2018-01-11 11:33:38 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2018-01-11 11:33:38 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-01-11 11:33:38 -0500
+
+
+Started POST "/authors" for ::1 at 2018-01-11 11:34:33 -0500
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Ds/O6Btnsg0VRH4tBoiPeNAfuFns3NZpjChRcPBhjlgC1Da5ovbal+6J/jO4aM6VXjOgAxT9ngOVG6pXiGE5Q==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fac5eb07810 @tempfile=#<Tempfile:/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/RackMultipart20180111-45661-co6n6k.png>, @original_filename="stop waiting.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"stop waiting.png\"\r\nContent-Type: image/png\r\n">, "name"=>"Fake Author", "bio"=>"This is a fake author, dude."}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45661-glea5r.png'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45661-1s8omh.png'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "This is a fake author, dude."], ["name", "Fake Author"], ["avatar_file_name", "stop_waiting.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 140745], ["avatar_updated_at", "2018-01-11 16:34:33.381858"], ["created_at", "2018-01-11 16:34:33.407986"], ["updated_at", "2018-01-11 16:34:33.407986"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 44ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/authors/5" for ::1 at 2018-01-11 11:34:33 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/5" for ::1 at 2018-01-11 11:35:37 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2018-01-11 11:37:14 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/avatars/original/missing.png" for ::1 at 2018-01-11 11:37:14 -0500
+
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.6ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (34.5ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (78.5ms)
+
+
+Started GET "/authors" for ::1 at 2018-01-11 11:40:39 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2018-01-11 11:40:39 -0500
+
+
+Started GET "/authors" for ::1 at 2018-01-11 11:42:51 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2018-01-11 11:42:51 -0500
+
+
+Started GET "/system/authors/avatars/000/000/005/thumb/stop_waiting.png?1515688473" for ::1 at 2018-01-11 11:42:51 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/authors/avatars/000/000/005/thumb/stop_waiting.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.6ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (34.7ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (75.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2018-01-11 11:43:13 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (2.0ms)
+  Rendered authors/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for ::1 at 2018-01-11 11:43:38 -0500
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pm8H8Y9adNtp0yB0u+AAZHebZ5SCw7hpWaMVlsYZ++Q6X2gQybwxeQI8FnTBG4FjwaPX9ekjPUjxx9p6W/n5OA==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fac60069370 @tempfile=#<Tempfile:/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/RackMultipart20180111-45661-ll9b8q.png>, @original_filename="stop waiting.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"stop waiting.png\"\r\nContent-Type: image/png\r\n">, "name"=>"Another fake one", "bio"=>"just another fake author"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45661-10jert2.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/c842cc979742fa0052da78876cdcef8820180111-45661-1hghaao.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/c842cc979742fa0052da78876cdcef8820180111-45661-1hghaao.png[0]'
+Command :: convert '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/c842cc979742fa0052da78876cdcef8820180111-45661-1hghaao.png[0]' -auto-orient -resize "100x100>" '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/9a4559b96edb516c9d1f5b5e7c6cce9a20180111-45661-rkmk1p'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45661-101ddnx.png'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "just another fake author"], ["name", "Another fake one"], ["avatar_file_name", "stop_waiting.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 140745], ["avatar_updated_at", "2018-01-11 16:43:38.957844"], ["created_at", "2018-01-11 16:43:39.094054"], ["updated_at", "2018-01-11 16:43:39.094054"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/6
+Completed 302 Found in 161ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/authors/6" for ::1 at 2018-01-11 11:43:39 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 6]]
+  Rendered authors/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors" for ::1 at 2018-01-11 11:43:42 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/system/authors/avatars/000/000/005/thumb/stop_waiting.png?1515688473" for ::1 at 2018-01-11 11:43:42 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/authors/avatars/000/000/005/thumb/stop_waiting.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/kylelee/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kylelee/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-rmjbl.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-ac8l8s.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-ac8l8s.png[0]'
+Command :: convert '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-ac8l8s.png[0]' -auto-orient -resize "100x100>" '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/9dbc5b333566965bfad7b519b560b0a720180111-45757-1wfql17'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2018-01-11 16:44:47.306679"], ["avatar_file_name", "stop_waiting.png"], ["updated_at", "2018-01-11 16:44:47.396143"], ["id", 5]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Command :: file -b --mime '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-7c0ewh.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-xlqkf7.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-xlqkf7.png[0]'
+Command :: convert '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/f361e58c40d0e9c3101a3bef5502fa6a20180111-45757-xlqkf7.png[0]' -auto-orient -resize "100x100>" '/var/folders/4s/gcc_r3bx5qg86g833dzcdrjm0000gn/T/0469124eda0e1d23e290f452457e456220180111-45757-1qcf821'
+[paperclip] deleting /Users/kylelee/Development/code/rails-paperclip-readme-v-000/public/system/authors/avatars/000/000/006/thumb/stop_waiting.png
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?  [["avatar_updated_at", "2018-01-11 16:44:47.412722"], ["avatar_file_name", "stop_waiting.png"], ["updated_at", "2018-01-11 16:44:47.494726"], ["id", 6]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/authors" for ::1 at 2018-01-11 11:45:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (228.9ms)
+Completed 200 OK in 284ms (Views: 270.9ms | ActiveRecord: 0.4ms)
