@@ -3,9 +3,9 @@
 <ul>
 <% @authors.each do |author| %>
   <li>
-  <%= image_tag author.avatar.url(:thumb) %>
-  <%= link_to author.name, author_path(author) %><br>
-  <%= author.bio %>
+    <%= image_tag author.avatar.url(:thumb) %>
+    <%= link_to author.name, author_path(author) %><br><br>
+    <%= author.bio %><br><br>
   </li>
 <% end %>
 </ul>
