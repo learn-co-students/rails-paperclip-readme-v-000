@@ -1,7 +1,18 @@
-<%= form_for @author do |f| %>
+<%= form_for @author, html: {multipart: true} do |f| %>
+
+  <div>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <br>
+
   <%= f.label :name %>
   <%= f.text_field :name %><br>
+  <br>
+
   <%= f.label :bio %>
   <%= f.text_area :bio %>
+  <br>
+
   <%= f.submit %>
 <% end %>
