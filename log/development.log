@@ -675,3 +675,59 @@ Processing by AuthorsController#new as HTML
   Rendered authors/_form.html.erb (25.6ms)
   Rendered authors/new.html.erb within layouts/application (38.1ms)
 Completed 200 OK in 74ms (Views: 73.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/" for ::1 at 2018-03-27 19:52:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.5ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (222.6ms)
+Completed 200 OK in 313ms (Views: 290.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2018-03-27 19:52:58 -0500
+
+
+Started GET "/authors/new" for ::1 at 2018-03-27 19:55:40 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (22.4ms)
+  Rendered authors/new.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 63ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/authors" for ::1 at 2018-03-27 19:56:02 -0500
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nMyHw1N7f33Jfru+KHe5TiWkBuae8OTHMtzfLC4TQ3k1fWDYKDNqMVh5cnEQNNKGFXugvCuKB1wH72xOG2RJMQ==", "author"=>{"name"=>"Terry Blue", "bio"=>"The Mighty"}, "commit"=>"Create Author"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "authors" ("bio", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["bio", "The Mighty"], ["name", "Terry Blue"], ["created_at", "2018-03-28 00:56:02.593816"], ["updated_at", "2018-03-28 00:56:02.593816"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/authors/5" for ::1 at 2018-03-27 19:56:02 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 60ms (Views: 48.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/authors/" for ::1 at 2018-03-27 19:56:17 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2018-03-27 19:56:17 -0500
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+
+
+Started GET "/authors/" for ::1 at 2018-03-27 19:58:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (238.5ms)
+Completed 200 OK in 344ms (Views: 327.6ms | ActiveRecord: 0.6ms)
