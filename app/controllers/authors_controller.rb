@@ -1,3 +1,4 @@
+require 'pry'
 class AuthorsController < ApplicationController
   def show
     @author = Author.find(params[:id])
@@ -16,15 +17,15 @@ class AuthorsController < ApplicationController
     @author.update(author_params)
     redirect_to author_path(@author)
   end
+  def new
+    @author = Author.new
+  end
 
   def create
     @author = Author.create(author_params)
     redirect_to author_path(@author)
   end
 
-  def new
-    @author = Author.new
-  end
 
   private
 
