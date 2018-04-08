@@ -1,4 +1,5 @@
-require 'pry'
+# frozen_string_literal: true
+
 class AuthorsController < ApplicationController
   def show
     @author = Author.find(params[:id])
@@ -16,6 +17,8 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
     @author.update(author_params)
     redirect_to author_path(@author)
+  end
+
   def new
     @author = Author.new
   end
@@ -24,7 +27,6 @@ class AuthorsController < ApplicationController
     @author = Author.create(author_params)
     redirect_to author_path(@author)
   end
-
 
   private
 
