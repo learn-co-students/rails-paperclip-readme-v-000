@@ -8,3 +8,12 @@
   </li>
 <% end %>
 </ul>
+
+ <% @authors.each do |author| %>
+    <li>
+    <%= image_tag author.avatar.url %>
+    <%= link_to author.name, author_path(author) %><br>
+    <%= author.bio %>
+    </li>
+  <% end %>
+  
