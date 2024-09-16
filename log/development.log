@@ -266,3 +266,139 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20160405005327)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160405005327"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 17:55:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2016-04-04 17:55:26 -0700
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (21.5ms)
+  Rendered authors/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 434ms (Views: 409.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-04 17:55:27 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 18:07:10 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2016-04-04 18:07:16 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for 127.0.0.1 at 2016-04-04 18:07:16 -0700
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2016-04-04 18:07:21 -0700
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (2.0ms)
+  Rendered authors/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2016-04-04 18:08:09 -0700
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Myjqo/N5uo/jR/11/7f43/X70a1oZHsfIWETOAAYDTBeA4+fs6tTkDVP2md3gndoE8j5Xl0ndsR0bOWVXHXd/Q==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f089c68dbd8 @tempfile=#<Tempfile:/tmp/RackMultipart20160404-3354-npv5so.jpg>, @original_filename="9d3da072b5cff57ec1c439787029a750.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"9d3da072b5cff57ec1c439787029a750.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Walter Jr.", "bio"=>"All i want is some breakfast"}, "commit"=>"Create Author"}
+Command :: file -b --mime '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-3354-1j9oxrf.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-3354-1rn6tc.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-3354-1rn6tc.jpg[0]'
+Command :: convert '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-3354-1rn6tc.jpg[0]' -auto-orient -resize "100x100>" '/tmp/e6af7c959139384d6d951385e7047fc720160404-3354-1wdsb1q'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-3354-1g7ed1q.jpg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "All i want is some breakfast"], ["name", "Walter Jr."], ["avatar_file_name", "9d3da072b5cff57ec1c439787029a750.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 12402], ["avatar_updated_at", "2016-04-05 01:08:09.800746"], ["created_at", "2016-04-05 01:08:09.848581"], ["updated_at", "2016-04-05 01:08:09.848581"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 67ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/authors/5" for 127.0.0.1 at 2016-04-04 18:08:09 -0700
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered authors/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2016-04-04 18:08:14 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-4515-gsuusl.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-4515-19cpkl4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-4515-19cpkl4.jpg[0]'
+Command :: convert '/tmp/b197db9a847ca5e5532e6b3f6f4d46be20160404-4515-19cpkl4.jpg[0]' -auto-orient -resize "100x100>" '/tmp/a8ca106758a53035a3820d1d28c7bdbb20160404-4515-42hskq'
+[paperclip] deleting /home/flatironschool/Development/code/rails-paperclip-readme-v-000/public/system/authors/avatars/000/000/005/thumb/9d3da072b5cff57ec1c439787029a750.jpg
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2016-04-05 01:08:36.914634"], ["avatar_file_name", "9d3da072b5cff57ec1c439787029a750.jpg"], ["updated_at", "2016-04-05 01:08:36.945272"], ["id", 5]]
+  [1m[35m (2.1ms)[0m  commit transaction
+
+
+Started GET "/authors" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (158.4ms)
+Completed 200 OK in 185ms (Views: 176.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for 127.0.0.1 at 2016-04-04 18:08:44 -0700
