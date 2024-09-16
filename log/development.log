@@ -266,3 +266,302 @@ Processing by AuthorsController#index as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
   Rendered authors/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAvatarToAuthors (20160901165644)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "authors" ADD "avatar_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "avatar_updated_at" datetime
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160901165644"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-09-01 10:59:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 27ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-01 11:00:00 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-09-01 11:00:28 -0700
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (35.9ms)
+  Rendered authors/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 581ms (Views: 567.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-01 11:00:28 -0700
+
+
+Started POST "/authors" for ::1 at 2016-09-01 11:00:44 -0700
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4X+Dmo5mR2560ySPpGMWIs0ToahzP9CpI2gyDOAsEAMm2GeKJ934X3br4GNzUaHLu6eez+xVlM8u8S28WxU6Rw==", "author"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc5f714a838 @tempfile=#<Tempfile:/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/RackMultipart20160901-91049-1bvzo1a.png>, @original_filename="Screen Shot 2015-06-14 at 9.48.49 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"author[avatar]\"; filename=\"Screen Shot 2015-06-14 at 9.48.49 AM.png\"\r\nContent-Type: image/png\r\n">, "name"=>"", "bio"=>""}, "commit"=>"Create Author"}
+Command :: file -b --mime '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91049-k6cgpf.png'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91049-f6e198.png'
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "authors" ("bio", "name", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", ""], ["name", ""], ["avatar_file_name", "Screen_Shot_2015-06-14_at_9.48.49_AM.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 4392], ["avatar_updated_at", "2016-09-01 18:00:44.211873"], ["created_at", "2016-09-01 18:00:44.261662"], ["updated_at", "2016-09-01 18:00:44.261662"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/5
+Completed 302 Found in 72ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/authors/5" for ::1 at 2016-09-01 11:00:44 -0700
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 60ms (Views: 45.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/authors/" for ::1 at 2016-09-01 11:01:20 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/avatars/original/missing.png" for ::1 at 2016-09-01 11:01:20 -0700
+
+ActionController::RoutingError (No route matches [GET] "/avatars/original/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.9ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.3ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.8ms)
+
+
+Started GET "/authors/" for ::1 at 2016-09-01 11:02:32 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-09-01 11:02:32 -0700
+
+
+Started GET "/authors/" for ::1 at 2016-09-01 11:03:20 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/assets/original/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-09-01 11:03:20 -0700
+
+
+Started GET "/authors/" for ::1 at 2016-09-01 11:04:15 -0700
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-09-01 11:04:15 -0700
+
+
+Started GET "/system/authors/avatars/000/000/005/thumb/Screen_Shot_2015-06-14_at_9.48.49_AM.png?1472752844" for ::1 at 2016-09-01 11:04:15 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system/authors/avatars/000/000/005/thumb/Screen_Shot_2015-06-14_at_9.48.49_AM.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/Jenny/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.2ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.2ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.7ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Jenny/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.8ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+Command :: file -b --mime '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91080-1h19g1c.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91080-v82edc.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91080-v82edc.png[0]'
+Command :: convert '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/27e99b15cc25d887d0b81899c19663fb20160901-91080-v82edc.png[0]' -auto-orient -resize "100x100>" '/var/folders/sd/thq1l5yj00x1nmdqpw70t0pm0000gn/T/9d2ef5728855b351003190f8e549bcd120160901-91080-6q3b2m'
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2016-09-01 18:04:45.176365"], ["avatar_file_name", "Screen_Shot_2015-06-14_at_9.48.49_AM.png"], ["updated_at", "2016-09-01 18:04:45.327801"], ["id", 5]]
+  [1m[35m (1.4ms)[0m  commit transaction
+
+
+Started GET "/authors/" for ::1 at 2016-09-01 11:04:56 -0700
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-01 11:04:56 -0700
+
+
+Started GET "/assets/thumb/default-4d452c63d330fa4ca5200c3fa437bfd595741d59846222f62704f02365fdbc6c.png" for ::1 at 2016-09-01 11:04:56 -0700
