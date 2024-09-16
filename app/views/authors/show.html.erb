@@ -1,4 +1,5 @@
 <h1><%= @author.name %></h1>
+<%= image_tag @author.avatar.url %>
 <p><%= @author.bio %></p>
 <p>Posts:</p>
 <% @author.posts.each do |post| %>
